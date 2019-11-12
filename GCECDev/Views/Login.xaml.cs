@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GCECDev.Models;
+using GCECDev.Constants;
 using PropertyChanged;
 
 using Xamarin.Forms;
@@ -18,37 +19,47 @@ namespace GCECDev.Views
         void Init()
         {
             // Background
-            BackgroundColor = Constants.BackgroundColor;
+            BackgroundColor = Constants.Constants.BackgroundColor;
             buttonSignIn.BackgroundColor = Color.White;
 
             // Texts
-            labelUsername.TextColor = Constants.MainTextColor;
-            labelPassword.TextColor = Constants.MainTextColor;
+            labelUsername.TextColor = Constants.Constants.MainTextColor;
+            labelPassword.TextColor = Constants.Constants.MainTextColor;
 
             // Icons
-            loginIcon.HeightRequest = Constants.LoginIconHeight;
+            loginIcon.HeightRequest = Constants.Constants.LoginIconHeight;
             activitySpinner.IsVisible = false;
 
             // Logic
             entryUsername.Completed += (s, e) => entryPassword.Focus();
-            entryPassword.Completed += SignInProcess;
+            entryPassword.Completed += LogInProcess;
         }
 
-        public void SignInProcess(object sender, EventArgs args)
+        public async void LogInProcess(object sender, EventArgs args)
         {
-            var user = new User(entryUsername.Text, entryPassword.Text);
-            var (res, err) = user.Verify();
-            if (err != null)
+            try
             {
-                DisplayAlert("INTERNAL ERROR", err.Message, "Try again");
-                return;
+                activitySpinner.IsVisible = true;
+
+                var user = new User(entryUsername.Text, entryPassword.Text);
+
+                var err = await App.LoginCtrl.LoginAsync(user);
+
+                if (err != null)
+                {
+                    throw err;
+                }
+
+                await Navigation.PushModalAsync(new MainPage());
             }
-            if (res != null)
+            catch(Exception err)
             {
-                DisplayAlert("ACCESS DENIED", res, "Try again");
-                return;
+                await DisplayAlert("Error occurred when trying to login", err.Message, "Try again");
             }
-            activitySpinner.IsVisible = true;
+            finally
+            {
+                activitySpinner.IsVisible = false;
+            }
         }
     }
 }

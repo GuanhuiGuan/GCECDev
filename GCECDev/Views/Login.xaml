@@ -13,17 +13,18 @@
                 </OnIdiom>
             </StackLayout.Padding>
 
-            <Label x:Name="labelUsername" Text="Username"/>
-            <Entry x:Name="entryUsername" Placeholder="username"/>
-            <Label x:Name="labelPassword" Text="Password"/>
-            <Entry x:Name="entryPassword" Placeholder="password"/>
 
-            <Button x:Name="buttonSignIn" Text="Log in" Clicked="SignInProcess" />
+            <Label x:Name="labelUsername" Text="Username"/>
+            <Entry x:Name="entryUsername" Placeholder="username" Keyboard="Plain"/>
+            <Label x:Name="labelPassword" Text="Password"/>
+            <Entry x:Name="entryPassword" Placeholder="password" Keyboard="Plain"/>
+
+            <Button x:Name="buttonSignIn" Text="Log in" Clicked="LogInProcess" />
 
             <StackLayout x:Name="SpinnerStack" VerticalOptions="CenterAndExpand">
                 <StackLayout.Padding>
                     <OnIdiom x:TypeArguments="Thickness">
-                        <OnIdiom.Phone>40,20,40,20</OnIdiom.Phone>
+                        <OnIdiom.Phone>40,40,40,40</OnIdiom.Phone>
                         <OnIdiom.Tablet>140,150,140,100</OnIdiom.Tablet>
                     </OnIdiom>
                 </StackLayout.Padding>

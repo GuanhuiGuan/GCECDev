@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1265A49-90A5-458C-9E05-A02A40AE44B9}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		CHANGELOG.md = CHANGELOG.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCECDev.Tests", "GCECDev.Tests\GCECDev.Tests.csproj", "{8D065BDC-201A-4A3A-98B8-6F44FFA5E06C}"

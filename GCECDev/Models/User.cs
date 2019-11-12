@@ -1,8 +1,12 @@
 ﻿using System;
+using SQLite;
+
 namespace GCECDev.Models
 {
     public class User
     {
+        public string Id { get; set; }
+        [PrimaryKey]
         public string Username { get; set; }
         public string Password { get; set; }
 
@@ -34,17 +38,49 @@ namespace GCECDev.Models
             return "";
         }
 
-        public (string, Exception) Verify()
+
+        //public (string, Exception) Verify()
+        //{
+        //    if (!CheckCompleted())
+        //    {
+        //        return ("Username and password cannot be empty", null);
+        //    }
+
+        //    var userFromDB = App.UserDB.GetUser(GetUsername());
+        //    if (userFromDB == null)
+        //    {
+        //        return ("Username is not found", null);
+        //    }
+
+        //    if (userFromDB.GetPassword().Equals(GetPassword()))
+        //    {
+        //        return ("Incorrect password", null);
+        //    }
+            
+        //    return (null, null);
+        //}
+
+
+        //public (string, Exception) Register()
+        //{
+        //    if (!CheckCompleted())
+        //    {
+        //        return ("Username and password cannot be empty", null);
+        //    }
+
+        //    if (App.UserDB.GetUser(GetUsername()) != null)
+        //    {
+        //        return ("Username has been registered", null);
+        //    }
+
+        //    var res = App.UserDB.SaveUser(this);
+        //    return (res.ToString(), null);
+        //}
+
+
+        public bool CheckCompleted()
         {
-            if (this.GetUsername().Equals("") || this.GetPassword().Equals(""))
-            {
-                return ("Username and password cannot be empty", null);
-            }
-            if (this.GetPassword().Equals("ILLEGAL"))
-            {
-                return (null, new InvalidProgramException());
-            }
-            return (null, null);
+            return !GetUsername().Equals("") && !GetPassword().Equals("");
         }
     }
 }
