@@ -5,9 +5,8 @@
 - Init (D)
 - Login Page
     - View (D)
-    - RestService 
-    - Encryption
-    - Token
+    - RestService (D)
+    - Password show/hide (D)
 - Sign up Page
     - View
     - RestService
@@ -20,4 +19,5 @@
 - Logged out user
 - Calendar
 - News carousal
-
+- Encryption
+- Token

@@ -13,13 +13,30 @@
                 </OnIdiom>
             </StackLayout.Padding>
 
-
             <Label x:Name="labelUsername" Text="Username"/>
-            <Entry x:Name="entryUsername" Placeholder="username" Keyboard="Plain"/>
+            <Entry x:Name="entryUsername" Placeholder="username" Keyboard="Plain" HeightRequest="30"/>
             <Label x:Name="labelPassword" Text="Password"/>
-            <Entry x:Name="entryPassword" Placeholder="password" Keyboard="Plain"/>
 
-            <Button x:Name="buttonSignIn" Text="Log in" Clicked="LogInProcess" />
+            <Grid x:Name="GridPassword">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="90*" />
+                  <ColumnDefinition Width="10*" />
+                </Grid.ColumnDefinitions>
+
+                <Entry x:Name="entryPassword" IsPassword="True" Placeholder="password" Keyboard="Plain" Grid.Row="0" Grid.Column="0"/>
+                <BoxView x:Name="boxEye" Grid.Row="0" Grid.Column="1" Color="WhiteSmoke"/>
+                <Image x:Name="iconEye" Source="Eye" HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" Scale="0.7">
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1" />
+                  </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <Button x:Name="buttonSignIn" Text="Log in" Clicked="LogInProcess" Margin="40,10,40,20" />
 
             <StackLayout x:Name="SignUpStack" VerticalOptions="CenterAndExpand">
                 <StackLayout.Padding>

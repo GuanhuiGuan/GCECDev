@@ -67,5 +67,19 @@ namespace GCECDev.Views
         {
             await Navigation.PushModalAsync(new SignUp());
         }
+
+        public void ShowPass(object sender, EventArgs args)
+        {
+            if (entryPassword.IsPassword)
+            {
+                entryPassword.IsPassword = false;
+                iconEye.Source = "NoEye";
+            }
+            else
+            {
+                entryPassword.IsPassword = true;
+                iconEye.Source = "Eye";
+            }
+        }
     }
 }

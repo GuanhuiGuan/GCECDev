@@ -113,6 +113,10 @@
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LoginIcon.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\LoginIcon.imageset\LoginIcon-1.png" />
+    <ImageAsset Include="Assets.xcassets\Eye.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Eye.imageset\Eye.png" />
+    <ImageAsset Include="Assets.xcassets\NoEye.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\NoEye.imageset\NoEye.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -139,5 +143,7 @@
   <ItemGroup>
     <Folder Include="Assets.xcassets\LoginIcon.imageset\" />
     <Folder Include="Data\" />
+    <Folder Include="Assets.xcassets\Eye.imageset\" />
+    <Folder Include="Assets.xcassets\NoEye.imageset\" />
   </ItemGroup>
 </Project>
