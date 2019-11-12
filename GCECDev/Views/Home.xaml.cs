@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace GCECDev.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class Home : ContentPage
     {
-        public MainPage()
+        public Home()
         {
             InitializeComponent();
         }

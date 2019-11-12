@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GCECDev.Views.Home">
+    <ContentPage.Content>
+        <Label Text="HOME" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+    </ContentPage.Content>
+</ContentPage>

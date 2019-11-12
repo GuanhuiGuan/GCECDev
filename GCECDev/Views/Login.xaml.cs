@@ -25,6 +25,7 @@ namespace GCECDev.Views
             // Texts
             labelUsername.TextColor = Constants.Constants.MainTextColor;
             labelPassword.TextColor = Constants.Constants.MainTextColor;
+            
 
             // Icons
             loginIcon.HeightRequest = Constants.Constants.LoginIconHeight;
@@ -50,7 +51,7 @@ namespace GCECDev.Views
                     throw err;
                 }
 
-                await Navigation.PushModalAsync(new MainPage());
+                await Navigation.PushModalAsync(new Home());
             }
             catch(Exception err)
             {
@@ -60,6 +61,11 @@ namespace GCECDev.Views
             {
                 activitySpinner.IsVisible = false;
             }
+        }
+
+        public async void SignUpProcess(object sender, EventArgs args)
+        {
+            await Navigation.PushModalAsync(new SignUp());
         }
     }
 }
