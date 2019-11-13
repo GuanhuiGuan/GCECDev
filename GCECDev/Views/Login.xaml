@@ -14,12 +14,12 @@
             </StackLayout.Padding>
 
             <Label x:Name="labelUsername" Text="Username"/>
-            <Entry x:Name="entryUsername" Placeholder="username" Keyboard="Plain" HeightRequest="30"/>
+            <Entry x:Name="entryUsername" Placeholder="username" Keyboard="Plain" HeightRequest="40"/>
             <Label x:Name="labelPassword" Text="Password"/>
 
             <Grid x:Name="GridPassword">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -36,17 +36,19 @@
                 </Image>
             </Grid>
 
-            <Button x:Name="buttonSignIn" Text="Log in" Clicked="LogInProcess" Margin="40,10,40,20" />
+            <Button x:Name="buttonSignIn" Text="Log in" Clicked="LogInProcess" Margin="40,10,40,10" />
 
-            <StackLayout x:Name="SignUpStack" VerticalOptions="CenterAndExpand">
+            <StackLayout x:Name="SignUpStack" VerticalOptions="Center">
                 <StackLayout.Padding>
                     <OnIdiom x:TypeArguments="Thickness">
-                        <OnIdiom.Phone>40,40,40,40</OnIdiom.Phone>
+                        <OnIdiom.Phone>40,10,40,10</OnIdiom.Phone>
                         <OnIdiom.Tablet>140,150,140,100</OnIdiom.Tablet>
                     </OnIdiom>
                 </StackLayout.Padding>
 
                 <Button x:Name="buttonSignUp" Text="New user? Sign up" TextColor="White" StyleClass="Link" Clicked="SignUpProcess"/>
+
+                <Button x:Name="buttonLoggedOut" Text="Forget password?" TextColor="White" StyleClass="Link" Clicked="LoggedOutProcess"/>
             </StackLayout>
 
 

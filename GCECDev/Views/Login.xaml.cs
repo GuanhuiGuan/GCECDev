@@ -68,6 +68,11 @@ namespace GCECDev.Views
             await Navigation.PushModalAsync(new SignUp());
         }
 
+        public async void LoggedOutProcess(object sender, EventArgs args)
+        {
+            await Navigation.PushModalAsync(new SignUp());
+        }
+
         public void ShowPass(object sender, EventArgs args)
         {
             if (entryPassword.IsPassword)

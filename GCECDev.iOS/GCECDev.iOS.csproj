@@ -117,6 +117,8 @@
     <ImageAsset Include="Assets.xcassets\Eye.imageset\Eye.png" />
     <ImageAsset Include="Assets.xcassets\NoEye.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\NoEye.imageset\NoEye.png" />
+    <ImageAsset Include="Assets.xcassets\MenuIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\MenuIcon.imageset\MenuButton.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -145,5 +147,6 @@
     <Folder Include="Data\" />
     <Folder Include="Assets.xcassets\Eye.imageset\" />
     <Folder Include="Assets.xcassets\NoEye.imageset\" />
+    <Folder Include="Assets.xcassets\MenuIcon.imageset\" />
   </ItemGroup>
 </Project>
