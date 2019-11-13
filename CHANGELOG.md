@@ -7,3 +7,8 @@
 ## 0.1.1 - 2019-11-12
 
 - Implement password show/pass
+
+## 0.1.2 - 2019-11-12
+
+- Added Homepage with master view
+- Added ForgetPassword link
