@@ -23,6 +23,9 @@ namespace GCECDev.Views
 
             BindingContext = new HomeMasterViewModel();
             ListView = MenuItemsListView;
+
+            BackgroundColor = Constants.Constants.BackgroundColor;
+            
         }
 
         class HomeMasterViewModel : INotifyPropertyChanged
@@ -37,7 +40,8 @@ namespace GCECDev.Views
                     new HomeMenuItem { Id = 1, Title = "My Profile" },
                     new HomeMenuItem { Id = 2, Title = "Schedule" },
                     new HomeMenuItem { Id = 3, Title = "Chats" },
-                    new HomeMenuItem { Id = 4, Title = "Help" },
+                    new HomeMenuItem { Id = 4, Title = "Stream" },
+                    new HomeMenuItem { Id = 5, Title = "Help" },
                 });
             }
 

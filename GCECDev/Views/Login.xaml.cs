@@ -20,16 +20,20 @@ namespace GCECDev.Views
         {
             // Background
             BackgroundColor = Constants.Constants.BackgroundColor;
-            buttonSignIn.BackgroundColor = Color.White;
+            buttonSignIn.BackgroundColor = Constants.Constants.MainButtonColor;
 
             // Texts
             labelUsername.TextColor = Constants.Constants.MainTextColor;
             labelPassword.TextColor = Constants.Constants.MainTextColor;
-            
+            buttonSignIn.TextColor = Constants.Constants.BackgroundColor;
+            buttonSignUp.TextColor = Constants.Constants.MainTextColor;
+            buttonLoggedOut.TextColor = Constants.Constants.MainTextColor;
+
 
             // Icons
             loginIcon.HeightRequest = Constants.Constants.LoginIconHeight;
             activitySpinner.IsVisible = false;
+            activitySpinner.Color = Constants.Constants.MainTextColor;
 
             // Logic
             entryUsername.Completed += (s, e) => entryPassword.Focus();

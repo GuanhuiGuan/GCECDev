@@ -111,14 +111,25 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LoginIcon.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\LoginIcon.imageset\LoginIcon-1.png" />
     <ImageAsset Include="Assets.xcassets\Eye.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Eye.imageset\Eye.png" />
     <ImageAsset Include="Assets.xcassets\NoEye.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\NoEye.imageset\NoEye.png" />
     <ImageAsset Include="Assets.xcassets\MenuIcon.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\MenuIcon.imageset\MenuButton.png" />
+    <ImageAsset Include="Assets.xcassets\LoginIconTwitter.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LoginIconTwitter.imageset\LoginIcon-1.png" />
+    <ImageAsset Include="Assets.xcassets\IconCommunity.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconCommunity.imageset\IconCommunity.png" />
+    <ImageAsset Include="Assets.xcassets\IconEnterprise.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\IconEnterprise.imageset\LoginIconEnterprise.JPG" />
+    <ImageAsset Include="Assets.xcassets\IconEnterprise.imageset\IconEnterprise.png" />
+    <ImageAsset Include="Assets.xcassets\splash.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\splash.imageset\splash.png" />
+    <ImageAsset Include="Assets.xcassets\banner.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\banner.imageset\banner.png" />
+    <ImageAsset Include="Assets.xcassets\Icon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Icon.imageset\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -143,10 +154,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets.xcassets\LoginIcon.imageset\" />
     <Folder Include="Data\" />
     <Folder Include="Assets.xcassets\Eye.imageset\" />
     <Folder Include="Assets.xcassets\NoEye.imageset\" />
     <Folder Include="Assets.xcassets\MenuIcon.imageset\" />
+    <Folder Include="Assets.xcassets\LoginIconTwitter.imageset\" />
+    <Folder Include="Assets.xcassets\IconCommunity.imageset\" />
+    <Folder Include="Assets.xcassets\IconEnterprise.imageset\" />
+    <Folder Include="Assets.xcassets\splash.imageset\" />
+    <Folder Include="Assets.xcassets\banner.imageset\" />
+    <Folder Include="Assets.xcassets\Icon.imageset\" />
   </ItemGroup>
 </Project>
