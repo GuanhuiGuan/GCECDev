@@ -1,36 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Collections.ObjectModel;
+using GCECDev.Models;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace GCECDev.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Home : MasterDetailPage
+    public partial class Home : ContentPage
     {
         public Home()
         {
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            loadPhotosCarousel();
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void loadPhotosCarousel()
         {
-            var item = e.SelectedItem as HomeMenuItem;
-            if (item == null)
-                return;
-
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
-
-            Detail = new NavigationPage(page);
-            IsPresented = false;
-
-            MasterPage.ListView.SelectedItem = null;
+            ObservableCollection<CarouselImageCaption> photos = new ObservableCollection<CarouselImageCaption>
+            {
+                new CarouselImageCaption
+                {
+                    ImageSrc = "maul_obi",
+                    Caption = "Darth Maul vs Obiwan Kenobi"
+                },
+                new CarouselImageCaption
+                {
+                    ImageSrc = "kylo",
+                    Caption = "Kylo Ren vs Snowman"
+                },
+                new CarouselImageCaption
+                {
+                    ImageSrc = "vader_luke",
+                    Caption = "Darth Vader vs Luke Skywalker"
+                }
+            };
+            photoCarouselView.ItemsSource = photos;
         }
     }
 }

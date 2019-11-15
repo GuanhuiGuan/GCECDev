@@ -130,6 +130,14 @@
     <ImageAsset Include="Assets.xcassets\banner.imageset\banner.png" />
     <ImageAsset Include="Assets.xcassets\Icon.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Icon.imageset\logo.png" />
+    <ImageAsset Include="Assets.xcassets\AppIconText.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIconText.appiconset\AppIconText.png" />
+    <ImageAsset Include="Assets.xcassets\maul_obi.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\maul_obi.imageset\maul_obi.jpg" />
+    <ImageAsset Include="Assets.xcassets\vader_luke.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\vader_luke.imageset\vader_luke.jpg" />
+    <ImageAsset Include="Assets.xcassets\kylo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\kylo.imageset\kylo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -164,5 +172,9 @@
     <Folder Include="Assets.xcassets\splash.imageset\" />
     <Folder Include="Assets.xcassets\banner.imageset\" />
     <Folder Include="Assets.xcassets\Icon.imageset\" />
+    <Folder Include="Assets.xcassets\AppIconText.appiconset\" />
+    <Folder Include="Assets.xcassets\maul_obi.imageset\" />
+    <Folder Include="Assets.xcassets\vader_luke.imageset\" />
+    <Folder Include="Assets.xcassets\kylo.imageset\" />
   </ItemGroup>
 </Project>

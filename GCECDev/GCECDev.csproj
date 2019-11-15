@@ -24,6 +24,7 @@
   <ItemGroup>
     <Compile Remove="MyPage.xaml.cs" />
     <Compile Remove="Models\EmptyClass.cs" />
+    <Compile Remove="MasterDetailViews\RootDetail.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -31,5 +32,20 @@
     <Folder Include="Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Constants\" />
+    <Folder Include="MasterDetailViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Root\RootMasterDetail.xaml.cs">
+      <DependentUpon>MasterPageCS.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Root\MasterPageCS.xaml.cs">
+      <DependentUpon>MasterPageCS.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Root\MainPageCS.xaml.cs">
+      <DependentUpon>MainPageCS.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

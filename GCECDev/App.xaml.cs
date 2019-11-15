@@ -22,6 +22,7 @@ namespace GCECDev
         public App()
         {
             InitializeComponent();
+
             MainPage = new Views.Login();
         }
 

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GCECDev.Views
+namespace GCECDev.MasterDetailViews
 {
-    public class HomeMenuItem
+    public class RootMenuItem
     {
-        public HomeMenuItem()
+        public RootMenuItem()
         {
-            TargetType = typeof(HomeDetail);
+            TargetType = typeof(RootDetail);
         }
         public int Id { get; set; }
         public string Title { get; set; }

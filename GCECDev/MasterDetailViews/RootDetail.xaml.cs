@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace GCECDev.Views
+namespace GCECDev.MasterDetailViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomeDetail : ContentPage
+    public partial class RootDetail : ContentPage
     {
-        public HomeDetail()
+        public RootDetail()
         {
             InitializeComponent();
         }

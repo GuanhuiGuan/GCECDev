@@ -12,3 +12,8 @@
 
 - Added Homepage with master view
 - Added ForgetPassword link
+
+## 0.1.3 - 2019-11-15
+
+- Revamped Master Detail to allow navigation to other views
+- New logo and color theme

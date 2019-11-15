@@ -10,38 +10,33 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace GCECDev.Views
+namespace GCECDev.MasterDetailViews
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomeMaster : ContentPage
+    public partial class RootMaster : ContentPage
     {
         public ListView ListView;
 
-        public HomeMaster()
+        public RootMaster()
         {
             InitializeComponent();
 
-            BindingContext = new HomeMasterViewModel();
+            BindingContext = new RootMasterViewModel();
             ListView = MenuItemsListView;
 
-            BackgroundColor = Constants.Constants.BackgroundColor;
-            
+            GridSubtitle.BackgroundColor = Constants.Constants.MainButtonColor;
         }
 
-        class HomeMasterViewModel : INotifyPropertyChanged
+        class RootMasterViewModel : INotifyPropertyChanged
         {
-            public ObservableCollection<HomeMenuItem> MenuItems { get; set; }
+            public ObservableCollection<RootMenuItem> MenuItems { get; set; }
 
-            public HomeMasterViewModel()
+            public RootMasterViewModel()
             {
-                MenuItems = new ObservableCollection<HomeMenuItem>(new[]
+                MenuItems = new ObservableCollection<RootMenuItem>(new[]
                 {
-                    new HomeMenuItem { Id = 0, Title = "Home" },
-                    new HomeMenuItem { Id = 1, Title = "My Profile" },
-                    new HomeMenuItem { Id = 2, Title = "Schedule" },
-                    new HomeMenuItem { Id = 3, Title = "Chats" },
-                    new HomeMenuItem { Id = 4, Title = "Stream" },
-                    new HomeMenuItem { Id = 5, Title = "Help" },
+                    new RootMenuItem { Id = 0, Title = "Home" },
+                    new RootMenuItem { Id = 1, Title = "Profile" },
                 });
             }
 

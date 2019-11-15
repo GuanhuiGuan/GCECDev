@@ -5,6 +5,7 @@ using GCECDev.Constants;
 using PropertyChanged;
 
 using Xamarin.Forms;
+using GCECDev.MasterDetailViews;
 
 namespace GCECDev.Views
 {
@@ -55,7 +56,7 @@ namespace GCECDev.Views
                     throw err;
                 }
 
-                await Navigation.PushModalAsync(new Home());
+                await Navigation.PushModalAsync(new Root());
             }
             catch(Exception err)
             {
@@ -69,7 +70,7 @@ namespace GCECDev.Views
 
         public async void SignUpProcess(object sender, EventArgs args)
         {
-            await Navigation.PushModalAsync(new SignUp());
+            await Navigation.PushModalAsync(new Root());
         }
 
         public async void LoggedOutProcess(object sender, EventArgs args)

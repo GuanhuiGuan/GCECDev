@@ -1,13 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GCECDev.Views.Home" xmlns:pages="clr-namespace:GCECDev.Views">
-    <MasterDetailPage.Master>
-        <pages:HomeMaster x:Name="MasterPage" />
-    </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
-        <NavigationPage>
-            <x:Arguments>
-                <pages:HomeDetail />
-            </x:Arguments>
-        </NavigationPage>
-    </MasterDetailPage.Detail>
-</MasterDetailPage>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GCECDev.Views.Home" xmlns:pages="clr-namespace:GCECDev.Views" xmlns:controls="http://xamarin.com/schemas/2014/forms">
+   <StackLayout x:Name="bannerStack" VerticalOptions="FillAndExpand">
+        <Image x:Name="banner" Source="banner" Margin="0,100,0,40"/>
+
+
+        <StackLayout x:Name="photosStack" VerticalOptions="Center">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>40,10,40,10</OnIdiom.Phone>
+                    <OnIdiom.Tablet>140,150,140,100</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+
+            <Label x:Name="photosTitle" HorizontalTextAlignment="Start" VerticalOptions="StartAndExpand"/>
+
+            <controls:CarouselView ItemsSource="{Binding Photos}" x:Name="photoCarouselView" VerticalOptions="CenterAndExpand">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid x:Name="carouselTemplateGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="80"/>
+                                <RowDefinition Height="20"/>
+                            </Grid.RowDefinitions>
+
+                            <Image x:Name="carouselTemplateImage" Source="{Binding ImageSrc}" Aspect="AspectFit" Grid.Row="0" Grid.Column="0"/>
+                            <Label x:Name="carouselTemplateCaption" Text="{Binding Caption}" Grid.Row="1" Grid.Column="0"/>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </controls:CarouselView>
+
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
