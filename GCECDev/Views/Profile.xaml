@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GCECDev.Views.Profile">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout>
+                <Image Source="vader_luke" Aspect="AspectFit"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Image Source="kylo" Aspect="AspectFit"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Image Source="maul_obi" Aspect="AspectFit"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Image Source="vader_luke" Aspect="AspectFit"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Image Source="kylo" Aspect="AspectFit"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Image Source="maul_obi" Aspect="AspectFit"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

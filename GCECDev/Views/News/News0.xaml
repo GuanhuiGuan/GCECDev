@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GCECDev.Views.News.News0">
+    <ScrollView>
+        <StackLayout x:Name="MainStack">
+
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>10,80,10,10</OnIdiom.Phone>
+                    <OnIdiom.Tablet>50,100,50,40</OnIdiom.Tablet>
+                </OnIdiom>
+            </StackLayout.Padding>
+
+            <Label x:Name="Title" FontSize="30" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="SubTitle" FontSize="20" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+
+            <Image x:Name="Image0" HorizontalOptions="CenterAndExpand" Aspect="AspectFit"/>
+
+            <Label x:Name="Content" FontSize="16" HorizontalOptions="CenterAndExpand"/>
+
+            <Button x:Name="HomeButton" Clicked="GoHome" Text="Home" Margin="20" Padding="10"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

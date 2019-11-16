@@ -16,6 +16,8 @@ namespace GCECDev.Constants
 
         public static int LoginIconHeight = 120;
 
+        internal static string fontFamily = Device.OnPlatform("MarkerFelt-Thin", "Droid Sans Mono", "Comic Sans MS");
+
         // SQLite
         public static string SQLiteUsersDBFilename = "Users.db";
 

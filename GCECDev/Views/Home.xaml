@@ -1,36 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GCECDev.Views.Home" xmlns:pages="clr-namespace:GCECDev.Views" xmlns:controls="http://xamarin.com/schemas/2014/forms">
-   <StackLayout x:Name="bannerStack" VerticalOptions="FillAndExpand">
-        <Image x:Name="banner" Source="banner" Margin="0,100,0,40"/>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GCECDev.Views.Home"
+             xmlns:controls="http://xamarin.com/schemas/2014/forms">
+    <ScrollView>
+        <StackLayout x:Name="bannerStack">
+            <Image x:Name="banner" Source="logo" Scale="1" Margin="0,0,0,40"/>
 
 
-        <StackLayout x:Name="photosStack" VerticalOptions="Center">
-            <StackLayout.Padding>
-                <OnIdiom x:TypeArguments="Thickness">
-                    <OnIdiom.Phone>40,10,40,10</OnIdiom.Phone>
-                    <OnIdiom.Tablet>140,150,140,100</OnIdiom.Tablet>
-                </OnIdiom>
-            </StackLayout.Padding>
+            <StackLayout x:Name="newsStack">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>10,0,10,10</OnIdiom.Phone>
+                        <OnIdiom.Tablet>50,10,50,40</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
 
-            <Label x:Name="photosTitle" HorizontalTextAlignment="Start" VerticalOptions="StartAndExpand"/>
 
-            <controls:CarouselView ItemsSource="{Binding Photos}" x:Name="photoCarouselView" VerticalOptions="CenterAndExpand">
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid x:Name="carouselTemplateGrid">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="80"/>
-                                <RowDefinition Height="20"/>
-                            </Grid.RowDefinitions>
+                <Label x:Name="newsTitle" HorizontalTextAlignment="Start" VerticalTextAlignment="Start"/>
 
-                            <Image x:Name="carouselTemplateImage" Source="{Binding ImageSrc}" Aspect="AspectFit" Grid.Row="0" Grid.Column="0"/>
-                            <Label x:Name="carouselTemplateCaption" Text="{Binding Caption}" Grid.Row="1" Grid.Column="0"/>
-                        </Grid>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </controls:CarouselView>
+                <controls:CarouselView ItemsSource="{Binding Photos}"
+                                    x:Name="newsCarouselView" VerticalOptions="Start" HeightRequest="450">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout HeightRequest="450">
+                                <Frame BorderColor="Gray" Margin="8" HasShadow="True"
+                                        HeightRequest="200" WidthRequest="300"
+                                        CornerRadius="20" VerticalOptions="Center">
+
+                                    <StackLayout>
+                                        
+                                        <Image Source="{Binding ImageSrc}" Aspect="AspectFit">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding TapCommand}" NumberOfTapsRequired="1" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+
+                                        <Label TextColor="DarkSlateGray" Text="{Binding Caption}" FontSize="20"
+                                                FontAttributes="None" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+                                    </StackLayout>
+
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </controls:CarouselView>
+
+            </StackLayout>
+
+            <StackLayout x:Name="photosStack">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>10,0,10,10</OnIdiom.Phone>
+                        <OnIdiom.Tablet>50,10,50,40</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+
+
+                <Label x:Name="photosTitle" HorizontalTextAlignment="Start" VerticalOptions="Start"/>
+
+                <controls:CarouselView ItemsSource="{Binding Photos}"
+                                    x:Name="photoCarouselView" VerticalOptions="Start" HeightRequest="450">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout HeightRequest="450">
+                                <Frame BorderColor="Gray" Margin="8" HasShadow="True"
+                                        HeightRequest="200" WidthRequest="300"
+                                        CornerRadius="20" VerticalOptions="Center">
+
+                                    <StackLayout>
+                                        <Image Source="{Binding ImageSrc}" Aspect="AspectFit"/>
+                                        <Label TextColor="DarkSlateGray" Text="{Binding Caption}" FontSize="20"
+                                                FontAttributes="None" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+                                    </StackLayout>
+
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </controls:CarouselView>
+
+            </StackLayout>
 
         </StackLayout>
-
-    </StackLayout>
+    </ScrollView>
 </ContentPage>

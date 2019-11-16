@@ -6,7 +6,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using GCECDev.Models;
+using GCECDev.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -24,7 +25,21 @@ namespace GCECDev.MasterDetailViews
             BindingContext = new RootMasterViewModel();
             ListView = MenuItemsListView;
 
+            Init();
+        }
+
+        void Init()
+        {
+
+            MenuTitle.Text = App.User.GetUsername();
+            MenuTitle.FontFamily = Constants.Constants.fontFamily;
+
             GridSubtitle.BackgroundColor = Constants.Constants.MainButtonColor;
+        }
+
+        public static implicit operator RootMaster(SignUp v)
+        {
+            throw new NotImplementedException();
         }
 
         class RootMasterViewModel : INotifyPropertyChanged

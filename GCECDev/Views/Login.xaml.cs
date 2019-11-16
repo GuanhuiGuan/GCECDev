@@ -56,6 +56,8 @@ namespace GCECDev.Views
                     throw err;
                 }
 
+                App.User = user;
+
                 await Navigation.PushModalAsync(new Root());
             }
             catch(Exception err)
@@ -70,7 +72,7 @@ namespace GCECDev.Views
 
         public async void SignUpProcess(object sender, EventArgs args)
         {
-            await Navigation.PushModalAsync(new Root());
+            await Navigation.PushModalAsync(new SignUp());
         }
 
         public async void LoggedOutProcess(object sender, EventArgs args)

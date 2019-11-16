@@ -15,6 +15,8 @@ namespace GCECDev.MasterDetailViews
         public Root()
         {
             InitializeComponent();
+
+            Detail = new NavigationPage(new Home());
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 
@@ -22,17 +24,27 @@ namespace GCECDev.MasterDetailViews
         {
             var item = e.SelectedItem as RootMenuItem;
             if (item == null)
+            {
+                // DisplayAlert("Internal Error", "Null MasterDetail Item", "To Home");
                 return;
+            }
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
+            // var page = (Page)Activator.CreateInstance(item.TargetType);
+            Page page;
 
             switch (item.Id)
             {
                 case 0:
-                    page = new SignUp();
+                    page = new Home();
+                    break;
+                case 1:
+                    page = new Profile();
+                    break;
+                default:
+                    // DisplayAlert("Internal Error", "Unknown MasterDetail Item", "To Home");
+                    page = new Home();
                     break;
             }
-
             page.Title = item.Title;
 
             Detail = new NavigationPage(page);

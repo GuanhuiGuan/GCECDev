@@ -138,6 +138,8 @@
     <ImageAsset Include="Assets.xcassets\vader_luke.imageset\vader_luke.jpg" />
     <ImageAsset Include="Assets.xcassets\kylo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\kylo.imageset\kylo.jpg" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo.imageset\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -176,5 +178,6 @@
     <Folder Include="Assets.xcassets\maul_obi.imageset\" />
     <Folder Include="Assets.xcassets\vader_luke.imageset\" />
     <Folder Include="Assets.xcassets\kylo.imageset\" />
+    <Folder Include="Assets.xcassets\logo.imageset\" />
   </ItemGroup>
 </Project>

@@ -2,6 +2,9 @@
 using System.IO;
 using GCECDev.Controllers;
 using GCECDev.Data;
+using GCECDev.MasterDetailViews;
+using GCECDev.Models;
+using GCECDev.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +13,10 @@ namespace GCECDev
     public partial class App : Application
     {
         public static LoginController LoginCtrl;
+        public static AuthController AuthCtrl;
+
+        public static User User { get; set; }
+        public static Token Token { get; set; }
 
         public static LoginController NewLoginCtrl()
         {
@@ -23,7 +30,9 @@ namespace GCECDev
         {
             InitializeComponent();
 
-            MainPage = new Views.Login();
+            LoginCtrl = NewLoginCtrl();
+
+            MainPage = LoginCtrl.FindCurrentUser() ? new Root() : (Page)new Login();
         }
 
         protected override void OnStart()

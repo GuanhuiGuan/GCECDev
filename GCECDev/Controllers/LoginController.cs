@@ -11,6 +11,16 @@ namespace GCECDev.Controllers
         {
         }
 
+        public bool FindCurrentUser()
+        {
+            User user = App.User;
+            if (user == null || user.GetUsername().Equals(""))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public async Task<Exception> LoginAsync(User user)
         {
             if (!user.CheckCompleted())

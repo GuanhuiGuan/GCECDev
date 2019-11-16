@@ -17,3 +17,10 @@
 
 - Revamped Master Detail to allow navigation to other views
 - New logo and color theme
+
+## 0.1.4 - 2019-11-16
+
+- Carousel view available
+- Carousel item with link to other pages
+- Username in RootMaster
+- Scroll view
