@@ -29,7 +29,7 @@ namespace GCECDev.Views
             buttonSignIn.TextColor = Constants.Constants.BackgroundColor;
             buttonSignUp.TextColor = Constants.Constants.MainTextColor;
             buttonLoggedOut.TextColor = Constants.Constants.MainTextColor;
-
+            footer.Text = Constants.Constants.Footer;
 
             // Icons
             loginIcon.HeightRequest = Constants.Constants.LoginIconHeight;
@@ -70,14 +70,9 @@ namespace GCECDev.Views
             }
         }
 
-        public async void SignUpProcess(object sender, EventArgs args)
-        {
-            await Navigation.PushModalAsync(new SignUp());
-        }
-
         public async void LoggedOutProcess(object sender, EventArgs args)
         {
-            await Navigation.PushModalAsync(new SignUp());
+            await Navigation.PushModalAsync(new LogoutUser());
         }
 
         public void ShowPass(object sender, EventArgs args)

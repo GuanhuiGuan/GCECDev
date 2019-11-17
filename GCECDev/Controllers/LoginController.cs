@@ -14,7 +14,7 @@ namespace GCECDev.Controllers
         public bool FindCurrentUser()
         {
             User user = App.User;
-            if (user == null || user.GetUsername().Equals(""))
+            if (user == null || user.GetUsername().Equals("") || user.GetPassword().Equals(""))
             {
                 return false;
             }

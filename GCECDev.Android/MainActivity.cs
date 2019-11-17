@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace GCECDev.Droid
 {
@@ -22,6 +23,7 @@ namespace GCECDev.Droid
             base.OnCreate(savedInstanceState);
 
             Forms.SetFlags("CollectionView_Experimental");
+            ImageCircleRenderer.Init();
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

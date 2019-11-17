@@ -37,7 +37,7 @@
                                         </Image>
 
                                         <Label TextColor="DarkSlateGray" Text="{Binding Caption}" FontSize="20"
-                                                FontAttributes="None" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+                                                FontAttributes="None" HorizontalTextAlignment="Center" VerticalOptions="End"/>
                                     </StackLayout>
 
                                 </Frame>
@@ -81,6 +81,8 @@
                 </controls:CarouselView>
 
             </StackLayout>
+
+            <Label x:Name="footer" TextColor="Gray" FontSize="10" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
 
         </StackLayout>
     </ScrollView>

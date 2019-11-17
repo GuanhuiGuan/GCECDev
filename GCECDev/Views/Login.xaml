@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GCECDev.Views.Login">
     <StackLayout>
         <StackLayout x:Name="IconStack" VerticalOptions="FillAndExpand">
-            <Image x:Name="loginIcon" Source="Icon" Margin="0,100,0,40" Scale="2"/>
+            <Image x:Name="loginIcon" Source="Icon" Margin="0,100,0,40" Scale="2"  HeightRequest="120"/>
         </StackLayout>
 
         <StackLayout x:Name="EntryStack" VerticalOptions="StartAndExpand">
@@ -28,7 +28,6 @@
                 </Grid.ColumnDefinitions>
 
                 <Entry x:Name="entryPassword" IsPassword="True" Placeholder="password" Keyboard="Plain" Grid.Row="0" Grid.Column="0"/>
-                <BoxView x:Name="boxEye" Grid.Row="0" Grid.Column="1" Color="WhiteSmoke"/>
                 <Image x:Name="iconEye" Source="Eye" HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.Column="1" Scale="0.7">
                   <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1" />
@@ -46,7 +45,7 @@
                     </OnIdiom>
                 </StackLayout.Padding>
 
-                <Button x:Name="buttonSignUp" Text="New user? Sign up" TextColor="White" StyleClass="Link" Clicked="SignUpProcess"/>
+                <Button x:Name="buttonSignUp" Text="New user? Sign up" TextColor="White" StyleClass="Link" Clicked="LoggedOutProcess"/>
 
                 <Button x:Name="buttonLoggedOut" Text="Forget password?" TextColor="White" StyleClass="Link" Clicked="LoggedOutProcess"/>
             </StackLayout>
@@ -65,6 +64,9 @@
             
             
         </StackLayout>
-        
+
+        <StackLayout Margin="20">
+            <Label x:Name="footer" TextColor="Gray" FontSize="10" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
     </StackLayout>
 </ContentPage>

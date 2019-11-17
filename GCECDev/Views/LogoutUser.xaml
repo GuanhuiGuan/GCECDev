@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GCECDev.Views.LogoutUser">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout x:Name="IconStack" VerticalOptions="FillAndExpand">
+                <Image x:Name="HeaderIcon" Source="Icon" Margin="0,100,0,40" Scale="2" HeightRequest="120"/>
+            </StackLayout>
+
+            <StackLayout x:Name="EntryStack" VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>40,20,40,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>140,150,140,100</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+
+                <Label x:Name="LabelUsername" Text="Enter your username i.e. email"/>
+                <Entry x:Name="EntryUsername" Placeholder="johndoe@sample.com" Keyboard="Plain" HeightRequest="40"/>
+
+                <Button x:Name="ButtonSubmit" Text="Submit" Clicked="SendEmailProcess" Margin="40,10,40,10" />
+
+                <Button x:Name="ButtonLogIn" Text="Back to login?" Clicked="ToLogIn" Margin="40,10,40,10" />
+            </StackLayout>
+
+            <StackLayout Margin="20">
+                <Label x:Name="footer" TextColor="Gray" FontSize="10" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -24,3 +24,11 @@
 - Carousel item with link to other pages
 - Username in RootMaster
 - Scroll view
+
+## 0.1.5 - 2019-11-16
+
+- Logged Out User Frontend
+    - Email entry
+    - Verify and set password
+- Masterview circular avatar
+- Masterview itemList with icons

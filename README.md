@@ -13,11 +13,16 @@
     - RestService (D)
     - Password show/hide (D)
 
+- Logout Verify Pages (Verify email -> Set password)
+    - View (D)
+    - RestService
+    - Email API
+
 - MasterDetail
     - Root (D)
     - News Carousel (D)
     - Photos Carousel, maybe with pinch enlarge?
-    - Master View Avatar and Text improvement
+    - Master View Avatar and Text improvement (D)
 
 - Profile Detail Page
     - API to get/post data
@@ -37,14 +42,7 @@
     - Token
     - EventQueue for database RESTAPI
 
-- Sign up Page (Enter email and send email)
-    - View
-    - RestService
-    - Email API
-
-- Set Password Page
-    - View
-    - RestService
+- API Certificate
 
 - Streaming
 

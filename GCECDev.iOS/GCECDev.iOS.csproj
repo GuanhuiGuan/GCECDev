@@ -140,6 +140,12 @@
     <ImageAsset Include="Assets.xcassets\kylo.imageset\kylo.jpg" />
     <ImageAsset Include="Assets.xcassets\logo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\logo.imageset\logo.png" />
+    <ImageAsset Include="Assets.xcassets\homeIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\homeIcon.imageset\homeIcon.png" />
+    <ImageAsset Include="Assets.xcassets\userIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\userIcon.imageset\userIcon.png" />
+    <ImageAsset Include="Assets.xcassets\logoutIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logoutIcon.imageset\logoutIcon-1.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -179,5 +185,8 @@
     <Folder Include="Assets.xcassets\vader_luke.imageset\" />
     <Folder Include="Assets.xcassets\kylo.imageset\" />
     <Folder Include="Assets.xcassets\logo.imageset\" />
+    <Folder Include="Assets.xcassets\homeIcon.imageset\" />
+    <Folder Include="Assets.xcassets\userIcon.imageset\" />
+    <Folder Include="Assets.xcassets\logoutIcon.imageset\" />
   </ItemGroup>
 </Project>

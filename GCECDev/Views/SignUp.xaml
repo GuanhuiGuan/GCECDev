@@ -3,6 +3,6 @@
     <StackLayout>
         <Label x:Name="labelTitle" Text="SIGN UP" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
 
-        
+        <Label x:Name="footer" TextColor="Gray" FontSize="10" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
     </StackLayout>
 </ContentPage>

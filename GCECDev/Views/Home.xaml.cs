@@ -22,6 +22,8 @@ namespace GCECDev.Views
 
             setCarouselTitle(photosTitle, "  Photos of the Day");
             photoCarouselView.HeightRequest = 250;
+
+            footer.Text = Constants.Constants.Footer;
         }
 
         private void setCarouselTitle(Label label, string text)

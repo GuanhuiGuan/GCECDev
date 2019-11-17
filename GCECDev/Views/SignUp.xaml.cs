@@ -10,6 +10,8 @@ namespace GCECDev.Views
         public SignUp()
         {
             InitializeComponent();
+
+            footer.Text = Constants.Constants.Footer;
         }
     }
 }

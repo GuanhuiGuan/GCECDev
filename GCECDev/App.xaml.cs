@@ -30,6 +30,8 @@ namespace GCECDev
         {
             InitializeComponent();
 
+            User = null;
+
             LoginCtrl = NewLoginCtrl();
 
             MainPage = LoginCtrl.FindCurrentUser() ? new Root() : (Page)new Login();

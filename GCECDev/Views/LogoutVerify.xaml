@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GCECDev.Views.LogoutVerify">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout x:Name="IconStack" VerticalOptions="FillAndExpand">
+                <Image x:Name="HeaderIcon" Source="Icon" Margin="0,100,0,40" Scale="2" HeightRequest="120"/>
+            </StackLayout>
+
+            <StackLayout x:Name="EntryStack" VerticalOptions="StartAndExpand">
+                <StackLayout.Padding>
+                    <OnIdiom x:TypeArguments="Thickness">
+                        <OnIdiom.Phone>40,20,40,20</OnIdiom.Phone>
+                        <OnIdiom.Tablet>140,150,140,100</OnIdiom.Tablet>
+                    </OnIdiom>
+                </StackLayout.Padding>
+
+                <StackLayout x:Name="StackVerify" Margin="20">
+                    <Label x:Name="LabelVerify" Text="Enter your verification code received with your email"/>
+                    <Entry x:Name="EntryVerify" Placeholder="verification code" Keyboard="Plain" HeightRequest="40"/>
+
+                    <Button x:Name="ButtonVerify" Text="Verify" Clicked="VerifyProcess" Margin="40,5,40,5" WidthRequest="100"/>
+                    <Button x:Name="ButtonResend" Text="Resend email" StyleClass="Link" Clicked="ResendProcess" IsEnabled="True"
+                            Margin="40,5,40,5" WidthRequest="100"/>
+                </StackLayout>
+
+                <StackLayout x:Name="StackPassword" Margin="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="LabelPassword" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Enter your new password"/>
+                        <Entry x:Name="EntryPassword" Grid.Row="1" Grid.Column="0"
+                               Placeholder="password" IsPassword="True" IsEnabled="False" Keyboard="Plain" HeightRequest="40"/>
+                        <Image x:Name="IconEye" Grid.Row="1" Grid.Column="1" Source="Eye" HorizontalOptions="End" VerticalOptions="Center" Scale="0.7">
+                          <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1" />
+                          </Image.GestureRecognizers>
+                        </Image>
+
+                        <Label x:Name="LabelVerifyPassword" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Re-enter your new password"/>
+                        <Entry x:Name="EntryRePassword" Grid.Row="3" Grid.Column="0"
+                               Placeholder="password" IsPassword="True" IsEnabled="False" Keyboard="Plain" HeightRequest="40"/>
+                        <Image x:Name="IconEyeRe" Grid.Row="3" Grid.Column="1" Source="Eye" HorizontalOptions="End" VerticalOptions="Center" Scale="0.7">
+                          <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="ShowPassRe" NumberOfTapsRequired="1" />
+                          </Image.GestureRecognizers>
+                        </Image>
+                        
+                    </Grid>
+
+                    <Button x:Name="ButtonSubmit" Text="Submit" Clicked="SetPasswordProcessAsync" Margin="40,5,40,5" WidthRequest="100"/>
+                </StackLayout>
+
+                <Button x:Name="ButtonLogIn" Text="Back to login?" Clicked="ToLogIn" Margin="40,5,40,5" />
+            </StackLayout>
+
+            <StackLayout Margin="20">
+                <Label x:Name="footer" TextColor="Gray" FontSize="10" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

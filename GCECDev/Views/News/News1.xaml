@@ -19,6 +19,11 @@
             <Label x:Name="Content" FontSize="16" HorizontalOptions="CenterAndExpand"/>
 
             <Button x:Name="HomeButton" Clicked="GoHome" Text="Home" Margin="20" Padding="10"/>
+
+            <StackLayout Margin="20">
+                <Label x:Name="footer" TextColor="Gray" FontSize="10" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
+            </StackLayout>
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

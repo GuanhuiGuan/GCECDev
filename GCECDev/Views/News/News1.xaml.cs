@@ -11,6 +11,7 @@ namespace GCECDev.Views.News
         {
             InitializeComponent();
 
+            footer.Text = Constants.Constants.Footer;
             Title.Text = "NEWS 1";
             SubTitle.Text = "author: Jane Doe";
             Image0.Source = "maul_obi";

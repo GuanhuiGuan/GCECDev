@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GCECDev.Models;
 using GCECDev.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -40,6 +41,10 @@ namespace GCECDev.MasterDetailViews
                 case 1:
                     page = new Profile();
                     break;
+                case -1:
+                    App.User = new User();
+                    Navigation.PushModalAsync(new Login());
+                    return;
                 default:
                     // DisplayAlert("Internal Error", "Unknown MasterDetail Item", "To Home");
                     page = new Home();

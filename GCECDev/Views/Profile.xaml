@@ -27,6 +27,8 @@
             <StackLayout>
                 <Image Source="maul_obi" Aspect="AspectFit"/>
             </StackLayout>
+
+            <Label x:Name="footer" TextColor="Gray" FontSize="10" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

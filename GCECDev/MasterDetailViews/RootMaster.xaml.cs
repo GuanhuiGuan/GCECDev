@@ -31,8 +31,8 @@ namespace GCECDev.MasterDetailViews
         void Init()
         {
 
-            MenuTitle.Text = App.User.GetUsername();
-            MenuTitle.FontFamily = Constants.Constants.fontFamily;
+            MenuUsername.Text = App.User.GetUsername();
+            MenuUsername.FontFamily = Font.Default.FontFamily;
 
             GridSubtitle.BackgroundColor = Constants.Constants.MainButtonColor;
         }
@@ -50,8 +50,9 @@ namespace GCECDev.MasterDetailViews
             {
                 MenuItems = new ObservableCollection<RootMenuItem>(new[]
                 {
-                    new RootMenuItem { Id = 0, Title = "Home" },
-                    new RootMenuItem { Id = 1, Title = "Profile" },
+                    new RootMenuItem { Id = 0, Title = "Home", Icon = "homeIcon" },
+                    new RootMenuItem { Id = 1, Title = "Profile", Icon = "userIcon" },
+                    new RootMenuItem { Id = -1, Title = "Logout", Icon = "logoutIcon" },
                 });
             }
 
