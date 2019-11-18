@@ -39,6 +39,8 @@ namespace GCECDev.Views
             // Logic
             entryUsername.Completed += (s, e) => entryPassword.Focus();
             entryPassword.Completed += LogInProcess;
+
+            App.User = new User();
         }
 
         public async void LogInProcess(object sender, EventArgs args)
@@ -57,6 +59,7 @@ namespace GCECDev.Views
                 }
 
                 App.User = user;
+                App.IsNewUser = false;
 
                 await Navigation.PushModalAsync(new Root());
             }
@@ -70,8 +73,15 @@ namespace GCECDev.Views
             }
         }
 
-        public async void LoggedOutProcess(object sender, EventArgs args)
+        public async void NewUserProcess(object sender, EventArgs args)
         {
+            App.IsNewUser = true;
+            await Navigation.PushModalAsync(new LogoutUser());
+        }
+
+        public async void ResetPasswordProcess(object sender, EventArgs args)
+        {
+            App.IsNewUser = false;
             await Navigation.PushModalAsync(new LogoutUser());
         }
 

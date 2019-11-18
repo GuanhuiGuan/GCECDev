@@ -22,6 +22,8 @@
                 <Button x:Name="ButtonSubmit" Text="Submit" Clicked="SendEmailProcess" Margin="40,10,40,10" />
 
                 <Button x:Name="ButtonLogIn" Text="Back to login?" Clicked="ToLogIn" Margin="40,10,40,10" />
+
+                <ActivityIndicator x:Name="LoadingSign" IsRunning="False" Color="DarkSlateGray" Margin="10"/>
             </StackLayout>
 
             <StackLayout Margin="20">

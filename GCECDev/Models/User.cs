@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using SQLite;
 
 namespace GCECDev.Models
@@ -38,45 +39,19 @@ namespace GCECDev.Models
             return "";
         }
 
-
-        //public (string, Exception) Verify()
-        //{
-        //    if (!CheckCompleted())
-        //    {
-        //        return ("Username and password cannot be empty", null);
-        //    }
-
-        //    var userFromDB = App.UserDB.GetUser(GetUsername());
-        //    if (userFromDB == null)
-        //    {
-        //        return ("Username is not found", null);
-        //    }
-
-        //    if (userFromDB.GetPassword().Equals(GetPassword()))
-        //    {
-        //        return ("Incorrect password", null);
-        //    }
-            
-        //    return (null, null);
-        //}
-
-
-        //public (string, Exception) Register()
-        //{
-        //    if (!CheckCompleted())
-        //    {
-        //        return ("Username and password cannot be empty", null);
-        //    }
-
-        //    if (App.UserDB.GetUser(GetUsername()) != null)
-        //    {
-        //        return ("Username has been registered", null);
-        //    }
-
-        //    var res = App.UserDB.SaveUser(this);
-        //    return (res.ToString(), null);
-        //}
-
+        // GetUPString returns a serialized JSON containing username and password
+        public string GetUPString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("{");
+            builder.Append("\"username\": \"");
+            builder.Append(Username);
+            builder.Append("\", ");
+            builder.Append("\"password\": \"");
+            builder.Append(Password);
+            builder.Append("\"}");
+            return builder.ToString();
+        }
 
         public bool CheckCompleted()
         {

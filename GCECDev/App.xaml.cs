@@ -18,6 +18,9 @@ namespace GCECDev
         public static User User { get; set; }
         public static Token Token { get; set; }
 
+        public static bool IsNewUser { get; set; }
+        public static DateTime CanSendAgain { get; set; }
+
         public static LoginController NewLoginCtrl()
         {
             if (LoginCtrl == null) {
@@ -31,6 +34,8 @@ namespace GCECDev
             InitializeComponent();
 
             User = null;
+
+            IsNewUser = true;
 
             LoginCtrl = NewLoginCtrl();
 

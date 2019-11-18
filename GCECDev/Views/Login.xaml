@@ -45,9 +45,9 @@
                     </OnIdiom>
                 </StackLayout.Padding>
 
-                <Button x:Name="buttonSignUp" Text="New user? Sign up" TextColor="White" StyleClass="Link" Clicked="LoggedOutProcess"/>
+                <Button x:Name="buttonSignUp" Text="New user? Sign up" TextColor="White" StyleClass="Link" Clicked="NewUserProcess"/>
 
-                <Button x:Name="buttonLoggedOut" Text="Forget password?" TextColor="White" StyleClass="Link" Clicked="LoggedOutProcess"/>
+                <Button x:Name="buttonLoggedOut" Text="Forget password?" TextColor="White" StyleClass="Link" Clicked="ResetPasswordProcess"/>
             </StackLayout>
 
 

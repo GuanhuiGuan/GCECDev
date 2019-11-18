@@ -22,6 +22,8 @@ namespace GCECDev.Constants
 
         internal static string fontFamily = Device.OnPlatform("MarkerFelt-Thin", "Droid Sans Mono", "Comic Sans MS");
 
+        public static double SendMinInterval = 0.5;
+
         // SQLite
         public static string SQLiteUsersDBFilename = "Users.db";
 

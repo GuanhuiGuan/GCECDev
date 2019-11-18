@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using GCECDev.Controllers;
 using GCECDev.Models;
 using Xamarin.Forms;
 
@@ -23,22 +25,60 @@ namespace GCECDev.Views
 
         async void SendEmailProcess(object sender, EventArgs e)
         {
+            LoadingSign.IsRunning = true;
             if (EntryUsername.Text == null || EntryUsername.Text.Equals(""))
             {
-                await DisplayAlert("Access Denied", "Your email cannot be empty", "Try again");
+                DisplayAlert("Access Denied", "Your email cannot be empty", "Try again");
+                LoadingSign.IsRunning = false;
                 return;
             }
 
-            if (App.User == null )
-            {
-                App.User = new User();
-            }
-            App.User.Username = EntryUsername.Text;
+            App.User = new User { Username = EntryUsername.Text };
 
-            // API call to send email
-            await DisplayAlert("Info", EntryUsername.Text, "Jump to Verify page");
+            LoginController lc = new LoginController();
+            try
+            {
+                // Verify email
+                var valid = await lc.CheckEmail(App.User.GetUsername(), App.IsNewUser);
+
+                if (!valid)
+                {
+                    string title, msg;
+                    if (App.IsNewUser)
+                    {
+                        title = "Email Exists";
+                        msg = "Your email has been registered";
+                    }
+                    else
+                    {
+                        title = "Email Not Found";
+                        msg = "Your account cannot be found";
+                    }
+                    DisplayAlert(title, msg, "Close");
+                    LoadingSign.IsRunning = false;
+                    return;
+                }
+
+                // Send email
+                var emailSentRes = await lc.SendEmail(App.User.GetUsername());
+                if (!emailSentRes)
+                {
+                    DisplayAlert("Server Error", "Please try again", "Close");
+                    LoadingSign.IsRunning = false;
+                    return;
+                }
+                App.CanSendAgain = DateTime.UtcNow.AddMinutes(Constants.Constants.SendMinInterval);
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine("Failed sending email or connection problem", err.GetBaseException());
+                DisplayAlert("Server Error", "Please check your email", "Try again");
+                LoadingSign.IsRunning = false;
+                return;
+            }
 
             await Navigation.PushModalAsync(new LogoutVerify());
+            LoadingSign.IsRunning = false;
         }
 
         async void ToLogIn(object sender, EventArgs e)

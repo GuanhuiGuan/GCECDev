@@ -32,3 +32,8 @@
     - Verify and set password
 - Masterview circular avatar
 - Masterview itemList with icons
+
+## 0.2.0 - 2019-11-17
+
+- Logged Out User whole workflow Basically completed
+    - Limited by daily email count

@@ -23,14 +23,16 @@
                     <Button x:Name="ButtonVerify" Text="Verify" Clicked="VerifyProcess" Margin="40,5,40,5" WidthRequest="100"/>
                     <Button x:Name="ButtonResend" Text="Resend email" StyleClass="Link" Clicked="ResendProcess" IsEnabled="True"
                             Margin="40,5,40,5" WidthRequest="100"/>
+
+                    <ActivityIndicator x:Name="VCLoadingSign" IsRunning="False" Color="DarkSlateGray" Margin="10"/>
                 </StackLayout>
 
                 <StackLayout x:Name="StackPassword" Margin="20">
                     <Grid>
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
                             <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="30"/>
                             <RowDefinition Height="40"/>
                         </Grid.RowDefinitions>
 
@@ -39,7 +41,8 @@
                             <ColumnDefinition Width="10*" />
                         </Grid.ColumnDefinitions>
 
-                        <Label x:Name="LabelPassword" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Enter your new password"/>
+                        <Label x:Name="LabelPassword" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Enter your new password"
+                               VerticalTextAlignment="End" VerticalOptions="End"/>
                         <Entry x:Name="EntryPassword" Grid.Row="1" Grid.Column="0"
                                Placeholder="password" IsPassword="True" IsEnabled="False" Keyboard="Plain" HeightRequest="40"/>
                         <Image x:Name="IconEye" Grid.Row="1" Grid.Column="1" Source="Eye" HorizontalOptions="End" VerticalOptions="Center" Scale="0.7">
@@ -48,7 +51,8 @@
                           </Image.GestureRecognizers>
                         </Image>
 
-                        <Label x:Name="LabelVerifyPassword" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Re-enter your new password"/>
+                        <Label x:Name="LabelVerifyPassword" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Re-enter your new password"
+                               VerticalTextAlignment="End" VerticalOptions="End"/>
                         <Entry x:Name="EntryRePassword" Grid.Row="3" Grid.Column="0"
                                Placeholder="password" IsPassword="True" IsEnabled="False" Keyboard="Plain" HeightRequest="40"/>
                         <Image x:Name="IconEyeRe" Grid.Row="3" Grid.Column="1" Source="Eye" HorizontalOptions="End" VerticalOptions="Center" Scale="0.7">
@@ -60,6 +64,8 @@
                     </Grid>
 
                     <Button x:Name="ButtonSubmit" Text="Submit" Clicked="SetPasswordProcessAsync" Margin="40,5,40,5" WidthRequest="100"/>
+
+                    <ActivityIndicator x:Name="PasswordLoadingSign" IsRunning="False" Color="DarkSlateGray" Margin="10"/>
                 </StackLayout>
 
                 <Button x:Name="ButtonLogIn" Text="Back to login?" Clicked="ToLogIn" Margin="40,5,40,5" />

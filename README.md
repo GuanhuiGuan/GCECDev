@@ -15,8 +15,8 @@
 
 - Logout Verify Pages (Verify email -> Set password)
     - View (D)
-    - RestService
-    - Email API
+    - RestService for verify code and reset password (D)
+    - Email API (D)
 
 - MasterDetail
     - Root (D)
@@ -34,13 +34,18 @@
     - Chats features
     - Contacts search
 
+- Forum Page
+
 
 ## Formal product
 
 - Login
     - Encryption
     - Token
-    - EventQueue for database RESTAPI
+
+- Setup SMTP server
+
+- Eventqueue and load balancer
 
 - API Certificate
 
