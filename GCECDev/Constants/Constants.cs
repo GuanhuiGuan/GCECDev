@@ -6,7 +6,7 @@ namespace GCECDev.Constants
     public static class Constants
     {
 
-        public static string Version = "0.1.5";
+        public static string Version = "0.2.0";
 
         public static string Footer = string.Format("Copyright WGCF 2020 | Ver. {0}", Version);
 
